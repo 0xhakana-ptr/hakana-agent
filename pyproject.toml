@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "questionforge"
+version = "0.3.0"
+description = "Evidence-first autonomous CTF challenge authoring agent for CTFY/TPCTF 2026."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Sloth / TPCTF 2026" }]
+dependencies = []
+
+[project.scripts]
+questionforge = "questionforge.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
